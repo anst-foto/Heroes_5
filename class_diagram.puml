@@ -1,0 +1,39 @@
+@startuml
+
+class Weapon {
+- name : string
+- type : int
+- damage : int
+
++ Weapon(name : string, type : int, damage : int)
+
++ GetName() : string
++ GetType() : int
++ GetDamage() : int
+}
+
+Weapon <--* Hero
+Hero <--* Hero
+class Hero{
+- name : string
+- health : int
+- damage : int
+- type : int
+- weapon : Weapon
+
++ Hero(name : string, health : int, damage : int, weapon : Weapon)
+
++ Attack(enemy : Hero) : void
+
++ GetName() : string
++ GetHealth() : int
++ SetHealth(health : int) : void
++ GetDamage() : int
++ GetWeapon() : Weapon
++ SetWeapon(weapon : Weapon) : bool
++ GetType() : int
+
++ IsDead() : bool
+}
+
+@enduml
