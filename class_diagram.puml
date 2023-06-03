@@ -29,6 +29,7 @@ class Hero{
 + GetHealth() : int
 + SetHealth(health : int) : void
 + GetDamage() : int
+- GetTotalDamage() : int
 + GetWeapon() : Weapon
 + SetWeapon(weapon : Weapon) : bool
 + GetType() : int

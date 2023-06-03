@@ -15,6 +15,15 @@ private:
     int _type;
     Weapon* _weapon;
 
+    int GetTotalDamage() {
+        int total_damage = _damage;
+        if (_weapon != nullptr) {
+            total_damage += _weapon->getDamage();
+        }
+
+        return total_damage;
+    }
+
 public:
     Hero(string name, int health, int damage, int type)
         : _name(name), _type(type) {
@@ -70,6 +79,11 @@ public:
 
     bool isDead() {
         return _health == 0;
+    }
+
+    void Attack(Hero* enemy) {
+        int new_health = enemy->getHealth() - GetTotalDamage();
+        enemy->setHealth(new_health);
     }
 };
 
